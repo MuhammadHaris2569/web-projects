@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧠 Memory Match</h1>
+    <p class="subtitle">Flip and match the same icons to win!</p>
+  </header>
+  <main class="game-container">
+    <div class="grid" id="grid"></div>
+    <p id="status" class="game-result"></p>
+    <p><a href="../index.html" class="back-link">← Back to Home</a></p>
+  </main>
+  <script>
+    const symbols = ['🍎','🍎','🍌','🍌','🍇','🍇','🍓','🍓','🍍','🍍','🥝','🥝','🍑','🍑','🍒','🍒'];
+    const shuffled = symbols.sort(() => 0.5 - Math.random());
+    const grid = document.getElementById('grid');
+    let selected = [], matched = [];
+
+    function render() {
+      grid.innerHTML = '';
+      shuffled.forEach((val, i) => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.textContent = matched.includes(i) || selected.includes(i) ? val : '?';
+        div.onclick = () => selectCard(i);
+        grid.appendChild(div);
+      });
+    }
+
+    function selectCard(i) {
+      if (selected.includes(i) || matched.includes(i)) return;
+      selected.push(i);
+      if (selected.length === 2) {
+        if (shuffled[selected[0]] === shuffled[selected[1]]) {
+          matched.push(...selected);
+        }
+        setTimeout(() => {
+          selected = [];
+          render();
+          if (matched.length === symbols.length) {
+            document.getElementById('status').textContent = '🎉 You won!';
+          }
+        }, 500);
+      }
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
