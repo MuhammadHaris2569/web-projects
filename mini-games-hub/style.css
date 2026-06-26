@@ -1,0 +1,199 @@
+/* Base Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #3a6073, #16222a);
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #00d2ff;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+/* Game Grid Layout */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Game Card Styling */
+.game-card {
+  background-color: #1e2a38;
+  border: 1px solid #00d2ff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.game-card:hover {
+  background-color: #263645;
+  transform: scale(1.05);
+}
+
+.game-card h2 {
+  margin-top: 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ccc;
+}
+
+/* Headings & Paragraphs */
+h2 {
+  color: #00d2ff;
+}
+p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Inputs & Buttons */
+input, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+button {
+  background-color: #00d2ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #009bd4;
+}
+
+/* Tic Tac Toe Board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #1e2a38;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  cursor: pointer;
+  border: 2px solid #00d2ff;
+}
+
+/* Memory Match Game */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  background-color: #00d2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Reaction Test */
+#box {
+  width: 150px;
+  height: 150px;
+  background-color: #3a7bd5;
+  margin: 20px auto;
+  display: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Game Containers */
+.game-container {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Primary Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s;
+  margin-bottom: 1rem;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+}
+
+/* Results */
+.game-result {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #ffffff;
+}
+
+/* Back link */
+.back-link {
+  color: #00d2ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+}
